@@ -48,4 +48,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Partner::class);
     }
+
+    public function verificationCode()
+    {
+        return $this->hasOne(EmailVerificationCode::class)->latest();
+    }
 }
