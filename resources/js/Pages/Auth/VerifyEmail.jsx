@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, Link} from '@inertiajs/react';
 import { Button } from "@/Components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/Components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/Components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/Components/ui/alert";
 import { Input } from "@/Components/ui/input";
 import { CheckCircledIcon } from "@radix-ui/react-icons";
@@ -84,6 +84,16 @@ export default function VerifyEmail({ status }) {
                             </div>
                         </form>
                     </CardContent>
+                    <CardFooter>
+                        <Link
+                            href={route('logout')}
+                            method="post"
+                            as="button"
+                            className="text-sm text-gray-600 hover:text-gray-900"
+                        >
+                            Log Out
+                        </Link>
+                    </CardFooter>
                 </Card>
             </div>
         </div>

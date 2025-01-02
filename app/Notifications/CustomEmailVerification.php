@@ -36,14 +36,15 @@ class CustomEmailVerification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Verify Your Email Address - Meals on Wheels')
-            ->greeting('Hello!')
-            ->line('Welcome to Meals on Wheels! We\'re excited to have you on board.')
-            ->line('Your verification code is:')
+            ->subject('Welcome to Meals on Wheels - Verify Your Email')
+            ->greeting('Welcome to Meals on Wheels! 🎉')
+            ->line('We\'re excited to have you on board.')
             ->line('' . $this->code . '')
             ->line('This code will expire in 60 minutes.')
             ->line('If you didn\'t create an account, no further action is required.')
-            ->salutation('Best regards,<br>The Meals on Wheels Team');
+            ->action('Visit Our Website', url('/'))
+            ->salutation('Best regards,')
+            ->salutation('The Meals on Wheels Team');
     }
 
     /**
